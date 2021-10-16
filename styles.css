@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --Pale-blue: hsl(225, 100%, 94%);
+    --Bright-blue: hsl(245, 75%, 52%);
+    --Very-pale-blue: hsl(225, 100%, 98%);
+    --Desaturated-blue: hsl(224, 23%, 55%);
+    --Dark-blue: hsl(223, 47%, 23%);
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+html{
+    min-height: 100vh;
+}
+
+body{
+    font-family: "Red Hat Display", sans-serif;
+    background-color: var(--Very-pale-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fondo{
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    object-fit: cover;
+}
+.card{
+    width: 420px;
+    height: auto;
+    background-color: white;
+    margin: 32px auto;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 2px 8px 8px var(--Desaturated-blue);
+    transition: 0.5s;
+}
+.card:active{
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 8px var(--Desaturated-blue);
+}
+.card .image-container img{
+    width: 100%;
+    object-fit: contain;
+}
+.content{
+    padding: 32px;
+}
+
+.content .title, .content .description{
+    text-align: center;
+}
+.title{
+    color: var(--Dark-blue);
+    font-weight: 900;
+}
+.description{
+    margin: 16px 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2em;
+    color: var(--Desaturated-blue);
+}
+
+.subscription{
+    width: 100%;
+    height: auto;
+    padding: 16px 32px;
+    background: var(--Very-pale-blue);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.subscription div:first-child{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.subscription .plan{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px 8px 0px 16px;
+    height: 100%;
+}
+
+.subscription .plan h3{
+    color: var(--Dark-blue);
+    font-weight: 900;
+}
+.subscription .plan p{
+    color: var(--Desaturated-blue);
+    font-weight: 700;
+}
+
+.payment{
+    width: 100%;
+    height: auto;
+    margin: 8px 0;
+    padding: 16px;
+    display: block;
+}
+
+.pay-button{
+    width: 100%;
+    height: auto;
+    padding: 16px 32px;
+    font-size: 16px;
+    background-color: var(--Bright-blue);
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 900;
+    box-shadow: 0 3px 10px var(--Pale-blue);
+    transition: 0.5s;
+}
+.pay-button:hover{
+    background-color: hsl(230, 55%, 60%);
+    box-shadow: 0 4px 8px var(--Desaturated-blue);
+}
+
+.content a{
+    text-decoration: none;
+}
+
+a#cancel-link{
+    color: var(--Desaturated-blue);
+    font-weight: 900;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+}
+
+#cancel-link:hover{
+    color: var(--Dark-blue);
+}
+
+a#link-change{
+    color: var(--Bright-blue);
+    font-weight: 700;
+    transition: 1s;
+}
+
+#link-change:hover{
+    text-decoration: underline;
+}
+.payment p{
+    width: 100%;
+    text-align: center;
+    margin-top: 32px;
+}
+
+@media (max-width: 375px){
+    .card{
+        width: 80vw;
+        margin: 32px;
+    }
+    .content{
+        padding: 16px 24px;
+        font-size: 17px;
+    }
+    .subscription{
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 12px;
+        width: auto;
+        padding: 8px 12px;
+    }
+    h1{
+        padding: 8px 0;
+    }
+    .plan{
+        margin: 8px !important;
+    }
+    .pay-button{
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}
+@media (max-width: 320px){
+    .plan{
+        margin: 8px 4px !important;
+    }
+    .subscription{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .subscription #link-change{
+        margin: 8px;
+        float: left;
+        text-align: left !important;
+    }
+    .subscription div:first-child{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
